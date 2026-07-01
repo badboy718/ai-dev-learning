@@ -77,4 +77,4 @@ git config --global http.sslBackend schannel
 
 1. 下载github官方插件，网络原因，下载速度极慢，放弃
 
-2. 小乌龟，commit-->push   SSL报错，**小乌龟调用 Git 时走了自己的网络通道，SSL 验证没被关闭。** 这是 TortoiseGit 的一个常见坑，命令行 Git 和 TortoiseGit 用的 SSL 库不完全一样。
+2. 小乌龟，commit-->push   SSL报错，**小乌龟调用 Git 时走了自己的网络通道，SSL 验证没被关闭。** 这是 TortoiseGit 的一个常见坑，命令行 Git 和 TortoiseGit 用的 SSL 库不完全一样。。
