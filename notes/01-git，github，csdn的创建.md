@@ -14,7 +14,7 @@ Git不会自动提交到GitHub，需要手动操作：`git add` → `git commit`
 
 ### 1. 网页端
 
-GitHub -> 头像 -> New repository -> 填仓库名 -> Create repository
+GitHub -> 头像 -> New repository -> 设置仓库名 -> Create repository
 
 ### 2. PowerShell 操作
 
