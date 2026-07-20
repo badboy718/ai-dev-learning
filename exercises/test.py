@@ -24,3 +24,4 @@ print(data)  # None  因为.不能匹配到\n
 print('------------------------')
 data = re.match('.{7}', my_str, re.S)
 print(data.group())  # 123\n456  因为re.S让.匹配到了\n
+
