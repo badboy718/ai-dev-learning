@@ -1,17 +1,32 @@
 import redis
+from sqlalchemy import exists
 
-# 创建 Redis 连接对象
 r = redis.Redis(
-    host='localhost',  # Redis 服务器地址
-    port=6379,         # Redis 服务器端口
-    db=0,              # 数据库编号，默认0
-    password=None,     # 密码，如果没有设置密码则为None
-    decode_responses=True  # 自动解码，返回字符串而不是字节
+    host='localhost',
+    port=6379,
+    db=0,
+    decode_responses=True
 )
+#设置键值对
+r.set('key', 'value')
+#是否存在 exists
+exists = r.exists('key')
+print('是否存在',exists)
+#设置生存时间 expire
+r.expire('key', 10)
+#查看剩余时长 ttl
+ttl = r.ttl('key')
+print('剩余',ttl)
+#设置新键值对，带有生存时间
+r.setex('key2',20,'value2')
+#永久存在 persist
+r.persist('key1')
 
-# 测试连接
-try:
-    response = r.ping()
-    print("Redis 连接成功:", response)
-except redis.ConnectionError as e:
-    print("Redis 连接失败:", e)
+#查找所有键
+all_keys = r.keys('*')
+print('所有：',all_keys)
+
+#删除key1键
+r.delete('key1')
+#查看是否存在
+print(r.exists('key1'))
