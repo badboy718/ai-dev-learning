@@ -3,7 +3,7 @@ from openai import OpenAI
 
 client = OpenAI(
     # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx"
-    api_key="sk-ws-H.EPPXHME.6w77.MEUCIQDlQEoQYVtCQFxQFfdtr5S5MCJeqW9nwLQsokGkWIFULgIgUxwxH_76FeHVJFpuZ7-iHCP3NBMUsVDCaKooNx-thRU",
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url="https://ws-rbug1o8iq6u98wxb.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
 )
 
@@ -16,7 +16,4 @@ completion = client.chat.completions.create(
     ]
 )
 print(completion.model_dump_json())
-print(completion.choices)
-print(completion.choices[0])
-print(completion.choices[0].message)
 print(completion.choices[0].message.content)
